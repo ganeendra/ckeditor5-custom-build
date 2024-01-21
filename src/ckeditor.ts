@@ -5,7 +5,6 @@
 
 import { ClassicEditor } from '@ckeditor/ckeditor5-editor-classic';
 
-import { CKFinderUploadAdapter } from '@ckeditor/ckeditor5-adapter-ckfinder';
 import { Alignment } from '@ckeditor/ckeditor5-alignment';
 import { Autoformat } from '@ckeditor/ckeditor5-autoformat';
 import { Autosave } from '@ckeditor/ckeditor5-autosave';
@@ -19,6 +18,7 @@ import {
 	Underline
 } from '@ckeditor/ckeditor5-basic-styles';
 import { BlockQuote } from '@ckeditor/ckeditor5-block-quote';
+import { CKBox } from '@ckeditor/ckeditor5-ckbox';
 import { CloudServices } from '@ckeditor/ckeditor5-cloud-services';
 import { CodeBlock } from '@ckeditor/ckeditor5-code-block';
 import type { EditorConfig } from '@ckeditor/ckeditor5-core';
@@ -43,7 +43,8 @@ import {
 	ImageResize,
 	ImageStyle,
 	ImageToolbar,
-	ImageUpload
+	ImageUpload,
+	PictureEditing
 } from '@ckeditor/ckeditor5-image';
 import { Indent, IndentBlock } from '@ckeditor/ckeditor5-indent';
 import { TextPartLanguage } from '@ckeditor/ckeditor5-language';
@@ -95,7 +96,7 @@ class Editor extends ClassicEditor {
 		Autosave,
 		BlockQuote,
 		Bold,
-		CKFinderUploadAdapter,
+		CKBox,
 		CloudServices,
 		Code,
 		CodeBlock,
@@ -134,6 +135,7 @@ class Editor extends ClassicEditor {
 		PageBreak,
 		Paragraph,
 		PasteFromOffice,
+		PictureEditing,
 		RemoveFormat,
 		SelectAll,
 		ShowBlocks,
@@ -169,7 +171,13 @@ class Editor extends ClassicEditor {
 		toolbar: {
 			items: [
 				'heading',
+				'style',
+				'textPartLanguage',
 				'|',
+				'sourceEditing',
+				'code',
+				'codeBlock',
+				'htmlEmbed',
 				'bold',
 				'italic',
 				'link',
@@ -184,7 +192,28 @@ class Editor extends ClassicEditor {
 				'insertTable',
 				'mediaEmbed',
 				'undo',
-				'redo'
+				'redo',
+				'ckbox',
+				'alignment',
+				'findAndReplace',
+				'fontBackgroundColor',
+				'fontColor',
+				'fontFamily',
+				'fontSize',
+				'highlight',
+				'horizontalLine',
+				'imageInsert',
+				'pageBreak',
+				'removeFormat',
+				'selectAll',
+				'showBlocks',
+				'specialCharacters',
+				'restrictedEditingException',
+				'strikethrough',
+				'subscript',
+				'superscript',
+				'todoList',
+				'underline'
 			]
 		},
 		language: 'en',
